@@ -7,12 +7,51 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/outputBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/default_output"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/outputGuideLabel"
+        app:layout_constraintVertical_bias="0.29000002" />
+
+    <EditText
+        android:id="@+id/inputBox"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/default_input"
+        app:layout_constraintTop_toBottomOf="@id/inputGuideLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteX="59dp" />
+
+    <Button
+        android:id="@+id/ChangeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_change"
+        app:layout_constraintTop_toBottomOf="@id/inputBox"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="273dp" />
+
+    <TextView
+        android:id="@+id/inputGuideLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/input_guideline"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/outputGuideLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/output_guideline"
+        app:layout_constraintTop_toBottomOf="@id/ChangeButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="330dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
