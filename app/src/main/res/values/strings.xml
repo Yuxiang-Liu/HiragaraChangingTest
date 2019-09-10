@@ -5,5 +5,6 @@
     <string name="default_input">""</string>
     <string name="default_output">""</string>
     <string name="start_change">Change</string>
-    <string name="output_err_msg">Change Hiragara error!</string>
+    <string name="output_err_general_msg">Change Hiragara happens unknown error!</string>
+    <string name="output_err_empty_input_msg">Please input sentence to change!</string>>
 </resources>
