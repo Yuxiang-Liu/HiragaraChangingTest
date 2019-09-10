@@ -10,44 +10,50 @@
         android:id="@+id/outputBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/default_output"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/outputGuideLabel"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintTop_toBottomOf="@id/outputGuideLabel" />
 
     <EditText
         android:id="@+id/inputBox"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/default_input"
-        app:layout_constraintTop_toBottomOf="@id/inputGuideLabel"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteX="59dp" />
+        app:layout_constraintTop_toBottomOf="@id/inputGuideLabel" />
 
     <Button
         android:id="@+id/ChangeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/start_change"
-        app:layout_constraintTop_toBottomOf="@id/inputBox"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="273dp" />
+        app:layout_constraintTop_toBottomOf="@id/inputBox" />
 
     <TextView
         android:id="@+id/inputGuideLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:text="@string/input_guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/outputGuideLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/output_guideline"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ChangeButton" />
