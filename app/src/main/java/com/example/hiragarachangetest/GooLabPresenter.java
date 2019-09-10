@@ -1,35 +1,34 @@
 package com.example.hiragarachangetest;
 
-import java.io.IOException;
+import android.util.Log;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
-
-public class GooLabPresenter implements IHiragaraChangeModel.getHiragaraAsynListener{
+public class GooLabPresenter implements IHiragaraChangeModel.IGetHiragaraListener {
+    private static final String TAG = "GooLabPresenter";
+    private final String OUTPUT_KEY = "converted";
     private IHiragaraChangeView mView;
     private IHiragaraChangeModel mModel;
+
 
     public GooLabPresenter(IHiragaraChangeView view) {
         this.mView = view;
         mModel = new GooLabModel();
+        Log.i(TAG, "Constructed");
     }
 
     public void getChangeResult(String sentence) {
-        mModel.getHiragaraAsyn(sentence);
+        mModel.getHiragaraAsyn(sentence, this);
+        Log.i(TAG, "Call getHiragaraAsyn, sentence is " + sentence);
     }
 
     @Override
-    public void onSucessed(String rsp) {
-        mView.onChangeSucceeded(getHiragaraFromResponse(rsp));
+    public void onSucceeded(String result) {
+        mView.onChangeSucceeded(result);
+        Log.i(TAG, "onSucceeded, response is " + result);
     }
 
     @Override
-    public void onFaiulre() {
+    public void onFailure() {
         mView.onChangeFailure();
-    }
-
-    private String getHiragaraFromResponse(String rsp) {
-        return null;
+        Log.i(TAG, "onFailure");
     }
 }
