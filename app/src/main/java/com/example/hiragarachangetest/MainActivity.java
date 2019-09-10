@@ -8,10 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements IHiragaraChangeView{
 
-    private final String TAG = "MainActivity";
+    private static final String TAG = "MainActivity";
     private TextView mHiragaraTextView;
     private Button mChangeButton;
 
@@ -37,23 +38,37 @@ public class MainActivity extends AppCompatActivity implements IHiragaraChangeVi
 
     @Override
     public void onChangeSucceeded(final String result) {
-        Thread thread = new Thread(new Runnable() {
+        Log.i(TAG, "onChangeSucceeded, Change result is " + result);
+         new Thread(new Runnable() {
             @Override
             public void run() {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         mHiragaraTextView.setText(result);
-                        Log.i(TAG, "onChangeSucceeded, Change result is " + result);
+                        Log.i(TAG, "set result to  " + result);
 
                     }
                 });
             }
-        });
+        }).start();
     }
 
     @Override
     public void onChangeFailure() {
-            Log.i(TAG, "Change hiragara error!");
+        Log.i(TAG, "Change hiragara error!");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(MainActivity.this, R.string.output_err_msg,
+                                Toast.LENGTH_LONG).show();
+
+                    }
+                });
+            }
+        }).start();
     }
 }
