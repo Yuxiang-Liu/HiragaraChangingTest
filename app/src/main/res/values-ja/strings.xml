@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ひらがら変換テスト</string>
+    <string name="input_guideline">下記場所に変換したい文字列を入力してください。</string>
+    <string name="output_guideline">変換結果は次に表示される。</string>
+    <string name="default_input">""</string>
+    <string name="default_output">""</string>
+    <string name="start_change">変換</string>
+    <string name="output_err_general_msg">未知なエラーが発生しました!</string>
+    <string name="output_err_empty_input_msg">変換したい文字を入力してください!</string>>
+</resources>
